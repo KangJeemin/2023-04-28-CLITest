@@ -9,7 +9,8 @@ program
   .option('-n,--name <name>','file name.html이 만들어질 예정','강지민.html')
   .option('-c,--compress','root태그 생성 여부',false)
   .option('-d,--directory <name>','생성 경로를 입력하세요','./result')
-  .option('-t,--text <name>','본문<p>태그의 내용 작성',"ㅋㅋ")
+  .option('-p,--text <name>','본문<p>태그의 내용 작성',"ㅋㅋ")
+  .option('-t,--title <name>','title 제목 입력',"document")
   .parse()
   
   if(program.opts().compress==true){
@@ -19,7 +20,7 @@ program
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>${program.opts().title}</title>
     </head>
     <body>
       <div id="root">
@@ -40,7 +41,7 @@ program
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>${program.opts().title}</title>
     </head>
     <body>
       <p>${program.opts().text}</p>
