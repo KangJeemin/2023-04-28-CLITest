@@ -22,8 +22,9 @@ program
       <title>Document</title>
     </head>
     <body>
-      <div id="root"></div>
-      <p>${program.opts().text}</p>
+      <div id="root">
+        <p>${program.opts().text}</p>
+      </div>
     </body>
     </html>` 
     fs.writeFileSync('./result/'+program.opts().name,text,(err)=>{
