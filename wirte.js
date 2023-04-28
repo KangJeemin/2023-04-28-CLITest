@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-fs.writeFile("test.txt","zz",(err)=>{
+fs.writeFile("./result/test.txt","zz",(err)=>{
   if(err)
   throw err
 });

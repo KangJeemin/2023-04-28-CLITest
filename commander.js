@@ -26,8 +26,31 @@ program
       <p>${program.opts().text}</p>
     </body>
     </html>` 
-    fs.writeFileSync(program.opts().name,text)
-    
+    fs.writeFileSync('./result/'+program.opts().name,text,(err)=>{
+      if(err){
+        console.log("에러 발생")
+      }
+    })
+  }
+  else{
+    const text =`<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+      <p>${program.opts().text}</p>
+    </body>
+    </html>` 
+    fs.writeFileSync('./result/'+program.opts().name,text,(err)=>{
+      if(err){
+        console.log("에러 발생")
+      }
+    })
+
   }
 
   
