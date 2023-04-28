@@ -11,6 +11,11 @@ inquirer
           message:"파일 이름을 입력해주세요"
       },
       {
+        type:'input',
+        name:'title',
+        message: 'title태크 내용을 입력해주세요',
+      },
+      {
           type:'confirm',
           name:'confirm',
           message: '최상단에 root태그를 만들까요?',
