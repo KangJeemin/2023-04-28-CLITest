@@ -1,4 +1,5 @@
 import {Command} from 'commander'
+import fs from 'fs'
 const program = new Command();
 
 program
@@ -12,7 +13,7 @@ program
   .parse()
   
   if(program.opts().compress==true){
-    console.log(`<!DOCTYPE html>
+    const text =`<!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -24,10 +25,11 @@ program
       <div id="root"></div>
       <p>${program.opts().text}</p>
     </body>
-    </html>`)
+    </html>` 
+    fs.writeFileSync(program.opts().name,text)
+    
   }
 
-  console.log(program.opts());
   
 
 
